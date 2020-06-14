@@ -10,7 +10,7 @@ interface Planet {
 let planets: Array<Planet>;
 
 async function loadPlanetData() {
-  const path = join(".", "kepler_exoplanets_nasa.csv");
+  const path = join("data", "kepler_exoplanets_nasa.csv");
 
   const file = await Deno.open(path);
   const bufReader = new BufReader(file);
