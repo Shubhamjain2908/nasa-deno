@@ -1,4 +1,5 @@
 import { Router } from "https://deno.land/x/oak@v5.0.0/mod.ts";
+import * as launches from "./models/launches.ts";
 import * as planets from "./models/planets.ts";
 
 const router = new Router();
@@ -17,6 +18,10 @@ router.get("/", (ctx) => {
 
 router.get("/planets", (ctx) => {
   ctx.response.body = planets.getAllPlanets();
+});
+
+router.get("/launches", (ctx) => {
+  ctx.response.body = launches.getAll();
 });
 
 export default router;
