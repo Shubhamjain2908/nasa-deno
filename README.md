@@ -16,3 +16,5 @@ Browse to the Mission Control front end at http://localhost:8000/index.html and 
 ## Locking Dependencies
 
 After adding a dependency, run `deno run -A mod.ts cache` to update the local module cache and create a corresponding lock file. This lock file can then be added to the repository.
+
+Link to postman collection [link](https://www.getpostman.com/collections/383f1139aa821f2e1edc).
