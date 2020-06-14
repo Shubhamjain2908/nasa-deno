@@ -3,9 +3,11 @@ import { BufReader } from "https://deno.land/std/io/bufio.ts";
 import { join } from "https://deno.land/std/path/mod.ts";
 import { pick } from "https://deno.land/x/lodash@4.17.15-es/lodash.js";
 
-interface Planet {
-  [key: string]: string;
-}
+// interface Planet {
+//   [key: string]: string;
+// }
+
+type Planet = Record<string, string>;
 
 let planets: Array<Planet>;
 
