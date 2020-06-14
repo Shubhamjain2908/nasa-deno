@@ -16,12 +16,17 @@ function initValues() {
 }
 
 function loadLaunches() {
-  // TODO: Once API is ready.
-  // Load launches and sort by flight number.
+  return fetch("/launches")
+    .then((launchesResponse) => launchesResponse.json())
+    .then((fetchedLaunches) => {
+      launches = fetchedLaunches.sort((a, b) => {
+        return a.flightNumber < b.flightNumber;
+      });
+    });
 }
 
 function loadPlanets() {
-  fetch("/planets")
+  return fetch("/planets")
     .then((planetsResponse) => planetsResponse.json())
     .then((planets) => {
       const planetSelector = document.getElementById("planets-selector");

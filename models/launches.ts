@@ -38,7 +38,7 @@ async function downloadLaunchData() {
       rocket: launch["rocket"]["rocket_name"],
       launchDate: launch["launch_date_unix"],
       upcoming: launch["upcoming"],
-      success: launch["success"],
+      success: launch["launch_success"],
       customers: customers,
     };
 
