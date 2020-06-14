@@ -1,5 +1,5 @@
 import { Application, send } from "https://deno.land/x/oak@v5.0.0/mod.ts";
-
+import api from "./api.ts";
 const app = new Application();
 const PORT = 8080;
 
@@ -16,10 +16,12 @@ app.use(async (ctx, next) => {
   ctx.response.headers.set("X-Response-Time", `${end}ms`);
 });
 
+app.use(api.routes());
+
 app.use(async (ctx) => {
   const filePath = ctx.request.url.pathname;
   const fileWhitelist = [
-    "/index/html",
+    "/index.html",
     "/javascripts/script.js",
     "/stylesheets/style.css",
     "/images/favicon.png",
@@ -29,11 +31,6 @@ app.use(async (ctx) => {
       root: `${Deno.cwd()}/public`,
     });
   }
-});
-
-app.use(async (ctx, next) => {
-  ctx.response.body = "CKMB";
-  await next();
 });
 
 console.log(`Server running on port ${PORT}`);
