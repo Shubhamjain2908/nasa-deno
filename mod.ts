@@ -17,6 +17,7 @@ app.use(async (ctx, next) => {
 });
 
 app.use(api.routes());
+app.use(api.allowedMethods());
 
 app.use(async (ctx) => {
   const filePath = ctx.request.url.pathname;
