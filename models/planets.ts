@@ -1,4 +1,4 @@
-import { BufReader, join, log, parse, pick } from "../deps.ts";
+import { BufReader, join, log, parse, pick } from "../src/deps.ts";
 
 // interface Planet {
 //   [key: string]: string;
